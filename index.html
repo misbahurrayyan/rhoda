@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Name - Book Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Author<span>Name</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Discover My Latest Book</h2>
+                <h1>"Book Title"</h1>
+                <p>A captivating story that will keep you turning pages all night long</p>
+                <a href="#featured" class="btn">Learn More</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/300x450" alt="Featured Book Cover" class="book-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Book Section -->
+    <section class="featured-book" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Book</h2>
+                <p>Now available on Amazon</p>
+            </div>
+            <div class="book-details">
+                <div class="book-cover-large">
+                    <img src="https://via.placeholder.com/300x450" alt="Featured Book Cover">
+                </div>
+                <div class="book-info">
+                    <h3>Book Title</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.5/5.0</span>
+                    </div>
+                    <p class="book-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                    </p>
+                    <div class="book-meta">
+                        <p><strong>Genre:</strong> Fiction, Thriller</p>
+                        <p><strong>Pages:</strong> 320</p>
+                        <p><strong>Publisher:</strong> Example Publishing</p>
+                    </div>
+                    <a href="https://www.amazon.com" class="btn btn-amazon" target="_blank">
+                        <i class="fab fa-amazon"></i> Buy on Amazon
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Collection -->
+    <section class="book-collection" id="books">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Books</h2>
+                <p>Browse my complete collection</p>
+            </div>
+            <div class="books-grid">
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://via.placeholder.com/200x300" alt="Book Cover">
+                    </div>
+                    <div class="book-card-info">
+                        <h3>Book Title 1</h3>
+                        <p class="book-genre">Fiction</p>
+                        <a href="#" class="btn btn-sm view-details" data-book="1">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://via.placeholder.com/200x300" alt="Book Cover">
+                    </div>
+                    <div class="book-card-info">
+                        <h3>Book Title 2</h3>
+                        <p class="book-genre">Non-Fiction</p>
+                        <a href="#" class="btn btn-sm view-details" data-book="2">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Book 3 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://via.placeholder.com/200x300" alt="Book Cover">
+                    </div>
+                    <div class="book-card-info">
+                        <h3>Book Title 3</h3>
+                        <p class="book-genre">Biography</p>
+                        <a href="#" class="btn btn-sm view-details" data-book="3">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Book 4 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://via.placeholder.com/200x300" alt="Book Cover">
+                    </div>
+                    <div class="book-card-info">
+                        <h3>Book Title 4</h3>
+                        <p class="book-genre">Fantasy</p>
+                        <a href="#" class="btn btn-sm view-details" data-book="4">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Author -->
+    <section class="about-author" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About The Author</h2>
+            </div>
+            <div class="author-content">
+                <div class="author-image">
+                    <img src="https://via.placeholder.com/300x300" alt="Author Photo">
+                </div>
+                <div class="author-bio">
+                    <h3>Author Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+                    <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-goodreads-g"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Join my newsletter to get updates on new releases, events, and more!</p>
+                <form id="newsletter-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> author@example.com</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> City, Country</p>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="contact-name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contact-email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Author<span>Name</span></h3>
+                    <p>Bringing stories to life</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#books">Books</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-goodreads-g"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Author Name. All Rights Reserved.</p>
+                <p>Website designed by YourName</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Book Details Modal -->
+    <div class="modal" id="bookModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-book-cover">
+                <img src="https://via.placeholder.com/300x450" alt="Book Cover" id="modalBookCover">
+            </div>
+            <div class="modal-book-info">
+                <h2 id="modalBookTitle">Book Title</h2>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>4.5/5.0</span>
+                </div>
+                <p class="book-genre" id="modalBookGenre">Fiction, Thriller</p>
+                <p class="book-description" id="modalBookDescription">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                </p>
+                <div class="book-meta">
+                    <p><strong>Pages:</strong> <span id="modalBookPages">320</span></p>
+                    <p><strong>Publisher:</strong> <span id="modalBookPublisher">Example Publishing</span></p>
+                    <p><strong>Release Date:</strong> <span id="modalBookDate">January 1, 2023</span></p>
+                </div>
+                <a href="https://www.amazon.com" class="btn btn-amazon" target="_blank" id="modalAmazonLink">
+                    <i class="fab fa-amazon"></i> Buy on Amazon
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-content">
+            <span class="close-modal">&times;</span>
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Thank You!</h2>
+            <p id="successMessage">Your subscription has been received.</p>
+            <button class="btn" id="closeSuccessModal">OK</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+  </html>
