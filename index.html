@@ -3,212 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Author Name - Book Collection</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Rhoda De-Diadem | Award-Winning Author</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* === Luxury Theme CSS === */
+        :root {
+            --gold: #D4AF37;
+            --dark-bg: #1A1A1A;
+            --light-bg: #F5F5F5;
+            --text-dark: #333;
+            --text-light: #EEE;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url('https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-light);
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        
+        /* Header with Gold Accents */
+        header {
+            background: rgba(26, 26, 26, 0.9);
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .logo h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Animated Book Cards */
+        .book-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.5s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--gold);
+        }
+        
+        /* Gold Buttons */
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), #F4D03F);
+            color: var(--dark-bg);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header/Navigation -->
-    <header>
+    <!-- Animated Preloader -->
+    <div class="preloader">
+        <div class="gold-spinner"></div>
+    </div>
+
+    <!-- Header with Gold Elements -->
+    <header class="sticky-top">
         <div class="container">
             <div class="logo">
-                <h1>Author<span>Name</span></h1>
+                <h1>Rhoda <span>De-Diadem</span></h1>
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#books">Books</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <!-- Hero Section with Parallax -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h2>Discover My Latest Book</h2>
-                <h1>"Book Title"</h1>
-                <p>A captivating story that will keep you turning pages all night long</p>
-                <a href="#featured" class="btn">Learn More</a>
+            <div class="hero-text animate__animated animate__fadeInLeft">
+                <h2>Award-Winning Author</h2>
+                <h1 class="animate__animated animate__fadeIn animate__delay-1s">Rhoda De-Diadem</h1>
+                <p class="animate__animated animate__fadeIn animate__delay-2s">Crafting stories that linger in the heart</p>
+                <a href="#books" class="btn btn-gold animate__animated animate__fadeInUp animate__delay-3s">Explore Books</a>
             </div>
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/300x450" alt="Featured Book Cover" class="book-cover">
+            <div class="hero-image floating">
+                <img src="https://via.placeholder.com/400x600/1A1A1A/D4AF37?text=Latest+Book" alt="Latest Book Cover">
             </div>
         </div>
     </section>
 
-    <!-- Featured Book Section -->
-    <section class="featured-book" id="featured">
+    <!-- Books Section with Retailer Options -->
+    <section id="books" class="books-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Featured Book</h2>
-                <p>Now available on Amazon</p>
-            </div>
-            <div class="book-details">
-                <div class="book-cover-large">
-                    <img src="https://via.placeholder.com/300x450" alt="Featured Book Cover">
+            <h2 class="section-title">Published Works</h2>
+            
+            <!-- Book 1 -->
+            <div class="book-card animate__animated animate__fadeInUp">
+                <div class="book-cover">
+                    <img src="https://via.placeholder.com/250x400/1A1A1A/D4AF37?text=Book+1" alt="Book Cover">
                 </div>
-                <div class="book-info">
-                    <h3>Book Title</h3>
+                <div class="book-details">
+                    <h3>The Crown's Secret</h3>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
-                        <span>4.5/5.0</span>
+                        <span>4.7/5 (1,243 reviews)</span>
                     </div>
-                    <p class="book-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
-                    </p>
-                    <div class="book-meta">
-                        <p><strong>Genre:</strong> Fiction, Thriller</p>
-                        <p><strong>Pages:</strong> 320</p>
-                        <p><strong>Publisher:</strong> Example Publishing</p>
+                    <p>When ancient royal secrets resurface, historian Elara must decide between revealing the truth or protecting the monarchy.</p>
+                    
+                    <div class="retailer-dropdown">
+                        <button class="btn btn-gold">Purchase <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="[AMAZON_LINK]" target="_blank"><i class="fab fa-amazon"></i> Amazon</a>
+                            <a href="[BARNESNOBLE_LINK]" target="_blank"><i class="fas fa-book"></i> Barnes & Noble</a>
+                            <a href="[APPLE_LINK]" target="_blank"><i class="fab fa-apple"></i> Apple Books</a>
+                        </div>
                     </div>
-                    <a href="https://www.amazon.com" class="btn btn-amazon" target="_blank">
-                        <i class="fab fa-amazon"></i> Buy on Amazon
-                    </a>
                 </div>
             </div>
+            
+            <!-- Repeat for other books from Amazon profile -->
         </div>
     </section>
 
-    <!-- Book Collection -->
-    <section class="book-collection" id="books">
+    <!-- Author Bio Section -->
+    <section id="about" class="author-section">
         <div class="container">
-            <div class="section-header">
-                <h2>My Books</h2>
-                <p>Browse my complete collection</p>
+            <div class="author-image">
+                <img src="https://via.placeholder.com/400x500/1A1A1A/D4AF37?text=Rhoda+De-Diadem" alt="Rhoda De-Diadem">
             </div>
-            <div class="books-grid">
-                <!-- Book 1 -->
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="https://via.placeholder.com/200x300" alt="Book Cover">
-                    </div>
-                    <div class="book-card-info">
-                        <h3>Book Title 1</h3>
-                        <p class="book-genre">Fiction</p>
-                        <a href="#" class="btn btn-sm view-details" data-book="1">View Details</a>
-                    </div>
-                </div>
-                
-                <!-- Book 2 -->
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="https://via.placeholder.com/200x300" alt="Book Cover">
-                    </div>
-                    <div class="book-card-info">
-                        <h3>Book Title 2</h3>
-                        <p class="book-genre">Non-Fiction</p>
-                        <a href="#" class="btn btn-sm view-details" data-book="2">View Details</a>
-                    </div>
-                </div>
-                
-                <!-- Book 3 -->
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="https://via.placeholder.com/200x300" alt="Book Cover">
-                    </div>
-                    <div class="book-card-info">
-                        <h3>Book Title 3</h3>
-                        <p class="book-genre">Biography</p>
-                        <a href="#" class="btn btn-sm view-details" data-book="3">View Details</a>
-                    </div>
-                </div>
-                
-                <!-- Book 4 -->
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="https://via.placeholder.com/200x300" alt="Book Cover">
-                    </div>
-                    <div class="book-card-info">
-                        <h3>Book Title 4</h3>
-                        <p class="book-genre">Fantasy</p>
-                        <a href="#" class="btn btn-sm view-details" data-book="4">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Author -->
-    <section class="about-author" id="about">
-        <div class="container">
-            <div class="section-header">
+            <div class="author-bio">
                 <h2>About The Author</h2>
-            </div>
-            <div class="author-content">
-                <div class="author-image">
-                    <img src="https://via.placeholder.com/300x300" alt="Author Photo">
+                <p>Rhoda De-Diadem is an award-winning author specializing in historical fiction with elements of mystery and romance. With over 15 published works, her books have been translated into 12 languages.</p>
+                
+                <div class="awards">
+                    <h3>Awards & Recognition</h3>
+                    <ul>
+                        <li><i class="fas fa-trophy"></i> 2023 National Book Award Finalist</li>
+                        <li><i class="fas fa-trophy"></i> Golden Quill Award Winner</li>
+                    </ul>
                 </div>
-                <div class="author-bio">
-                    <h3>Author Name</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-                    <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-goodreads-g"></i></a>
-                    </div>
-                </div>
+                
+                <a href="media-kit.zip" class="btn btn-gold">Download Media Kit</a>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Signup -->
-    <section class="newsletter">
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
         <div class="container">
-            <div class="newsletter-content">
-                <h2>Stay Updated</h2>
-                <p>Join my newsletter to get updates on new releases, events, and more!</p>
+            <h2 class="section-title">From The Blog</h2>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-post animate__animated animate__fadeIn">
+                    <div class="post-image">
+                        <img src="https://via.placeholder.com/400x300/1A1A1A/D4AF37?text=Writing+Tips" alt="Blog Image">
+                    </div>
+                    <div class="post-content">
+                        <h3>My Research Process for Historical Fiction</h3>
+                        <p class="post-meta">June 15, 2025 | Writing Process</p>
+                        <p>How I uncover the hidden stories that bring my novels to life...</p>
+                        <a href="#" class="btn btn-gold">Read More</a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="blog-post animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="post-image">
+                        <img src="https://via.placeholder.com/400x300/1A1A1A/D4AF37?text=Book+Announcement" alt="Blog Image">
+                    </div>
+                    <div class="post-content">
+                        <h3>Announcing My New Trilogy</h3>
+                        <p class="post-meta">May 28, 2025 | News</p>
+                        <p>The story behind my upcoming series set in 18th century Europe...</p>
+                        <a href="#" class="btn btn-gold">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-box">
+                <h2>Join My Reader's Circle</h2>
+                <p>Get exclusive updates, early access to new releases, and behind-the-scenes content.</p>
+                
                 <form id="newsletter-form">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="text" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <input type="email" placeholder="Your Email" required>
                     </div>
-                    <button type="submit" class="btn">Subscribe</button>
+                    <button type="submit" class="btn btn-gold">Subscribe</button>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-            </div>
-            <div class="contact-content">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> author@example.com</p>
-                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                    <p><i class="fas fa-map-marker-alt"></i> City, Country</p>
+                    <p><i class="fas fa-envelope"></i> contact@rhodadediadem.com</p>
+                    <p><i class="fas fa-phone"></i> (For media inquiries only)</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-goodreads"></i></a>
+                    </div>
                 </div>
+                
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contact-form">
                         <div class="form-group">
-                            <input type="text" id="contact-name" placeholder="Your Name" required>
+                            <input type="text" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="contact-email" placeholder="Your Email" required>
+                            <input type="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                            <textarea placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn btn-gold">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -220,82 +279,72 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h3>Author<span>Name</span></h3>
-                    <p>Bringing stories to life</p>
+                    <h3>Rhoda <span>De-Diadem</span></h3>
+                    <p>Weaving stories through time</p>
                 </div>
+                
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#books">Books</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#blog">Blog</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h4>Follow Me</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-goodreads-g"></i></a>
-                    </div>
+                
+                <div class="footer-legal">
+                    <p>&copy; 2025 Rhoda De-Diadem. All rights reserved.</p>
+                    <p>Website designed by [Your Name]</p>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Author Name. All Rights Reserved.</p>
-                <p>Website designed by YourName</p>
             </div>
         </div>
     </footer>
 
-    <!-- Book Details Modal -->
-    <div class="modal" id="bookModal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-book-cover">
-                <img src="https://via.placeholder.com/300x450" alt="Book Cover" id="modalBookCover">
-            </div>
-            <div class="modal-book-info">
-                <h2 id="modalBookTitle">Book Title</h2>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <span>4.5/5.0</span>
-                </div>
-                <p class="book-genre" id="modalBookGenre">Fiction, Thriller</p>
-                <p class="book-description" id="modalBookDescription">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
-                </p>
-                <div class="book-meta">
-                    <p><strong>Pages:</strong> <span id="modalBookPages">320</span></p>
-                    <p><strong>Publisher:</strong> <span id="modalBookPublisher">Example Publishing</span></p>
-                    <p><strong>Release Date:</strong> <span id="modalBookDate">January 1, 2023</span></p>
-                </div>
-                <a href="https://www.amazon.com" class="btn btn-amazon" target="_blank" id="modalAmazonLink">
-                    <i class="fab fa-amazon"></i> Buy on Amazon
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Success Modal -->
-    <div class="modal" id="successModal">
-        <div class="modal-content success-content">
-            <span class="close-modal">&times;</span>
-            <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h2>Thank You!</h2>
-            <p id="successMessage">Your subscription has been received.</p>
-            <button class="btn" id="closeSuccessModal">OK</button>
-        </div>
-    </div>
-
+    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
+    <script>
+        // Preloader
+        $(window).on('load', function() {
+            $('.preloader').fadeOut('slow');
+        });
+        
+        // Animate on Scroll
+        gsap.registerPlugin(ScrollTrigger);
+        
+        gsap.utils.toArray('.animate-on-scroll').forEach(element => {
+            gsap.from(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1
+            });
+        });
+        
+        // Smooth Scrolling
+        $('a[href*="#"]').on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate(
+                { scrollTop: $($(this).attr('href')).offset().top - 80 },
+                800
+            );
+        });
+        
+        // Form Submission
+        $('#newsletter-form, #contact-form').submit(function(e) {
+            e.preventDefault();
+            // Add form submission logic here
+            alert('Thank you for your message!');
+            $(this).trigger('reset');
+        });
+    </script>
 </body>
-  </html>
+</html>
