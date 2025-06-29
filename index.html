@@ -1,245 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhoda De-Diadem | Award-Winning Author</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Google Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rhoda De-Diadem - Author</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2em;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794');
+      background-size: cover;
+      background-position: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      margin-bottom: 0.3em;
+    }
+    nav {
+      background-color: #6a1b9a;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 1em;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5em;
+      padding: 2em;
+    }
+    .book-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .book-card:hover {
+      transform: scale(1.03);
+    }
+    .book-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+    .book-card .content {
+      padding: 1em;
+    }
+    .book-card .content h3 {
+      margin: 0.5em 0;
+      color: #6a1b9a;
+    }
+    .cta {
+      text-align: center;
+      padding: 2em;
+    }
+    .cta input, .cta button {
+      padding: 0.8em;
+      margin: 0.5em;
+      border-radius: 5px;
+      border: none;
+    }
+    .cta button {
+      background-color: #6a1b9a;
+      color: white;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #4a148c;
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+    }
+    .bio, .blog, .contact {
+      padding: 2em;
+      background: #f9f9f9;
+      margin: 2em auto;
+      border-radius: 10px;
+      max-width: 800px;
+    }
+    .bio img {
+      max-width: 150px;
+      border-radius: 50%;
+    }
+  </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="gold-spinner"></div>
+  <header>
+    <h1>Rhoda De-Diadem</h1>
+    <p>Christian Author | Inspirational Writer | Faith Builder</p>
+  </header>
+
+  <nav>
+    <a href="#books">Books</a>
+    <a href="#about">About</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="books" class="book-grid">
+    <!-- Add dynamic book cards here -->
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Book Cover">
+      <div class="content">
+        <h3>Book Title</h3>
+        <p>A short description of the book highlighting the core message and reader benefit.</p>
+        <a href="https://amazon.com" target="_blank">Buy on Amazon</a>
+      </div>
     </div>
+    <!-- Repeat for other books -->
+  </section>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Rhoda <span>De-Diadem</span></h1>
-                <p>Award-Winning Author</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#books">Books</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
+  <section class="cta">
+    <h2>Join My Newsletter</h2>
+    <input type="text" placeholder="Your Name" />
+    <input type="email" placeholder="Your Email" />
+    <button>Subscribe</button>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content animate-on-scroll">
-                <h2>Immerse Yourself In</h2>
-                <h1>Captivating Literary Worlds</h1>
-                <p>Discover award-winning fiction that transports you to extraordinary realms</p>
-                <a href="#books" class="btn btn-gold">Explore Books</a>
-            </div>
-            <div class="hero-image animate-on-scroll">
-                <img src="images/featured-book.png" alt="Featured Book" class="floating">
-            </div>
-        </div>
-    </section>
+  <section id="about" class="bio">
+    <h2>About Rhoda</h2>
+    <p>Rhoda De-Diadem is a passionate Christian writer whose works inspire, uplift, and empower readers to grow in faith and purpose. Her stories blend scripture-based truth with real-world relevance.</p>
+  </section>
 
-    <!-- Books Section -->
-    <section id="books" class="books">
-        <div class="container">
-            <h2 class="section-title">Published Works</h2>
-            
-            <!-- Book 1 -->
-            <div class="book-card animate-on-scroll">
-                <div class="book-cover">
-                    <img src="images/book1.jpg" alt="The Crown's Secret">
-                    <div class="book-badge">Bestseller</div>
-                </div>
-                <div class="book-details">
-                    <h3>The Crown's Secret</h3>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>4.7/5 (1,243 reviews)</span>
-                    </div>
-                    <p class="genre">Historical Fiction | Mystery</p>
-                    <p class="description">When ancient royal secrets resurface, historian Elara must decide between revealing the truth or protecting the monarchy.</p>
-                    
-                    <div class="retailer-buttons">
-                        <a href="[AMAZON_LINK]" class="btn btn-amazon" target="_blank">
-                            <i class="fab fa-amazon"></i> Amazon
-                        </a>
-                        <a href="[BARNES_LINK]" class="btn btn-barnes" target="_blank">
-                            <i class="fas fa-book"></i> Barnes & Noble
-                        </a>
-                        <a href="[APPLE_LINK]" class="btn btn-apple" target="_blank">
-                            <i class="fab fa-apple"></i> Apple Books
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Repeat for other books -->
-        </div>
-    </section>
+  <section id="blog" class="blog">
+    <h2>Latest Insights</h2>
+    <p>Coming soon: Reflections, devotionals, and writing journey posts from Rhoda.</p>
+  </section>
 
-    <!-- Author Bio -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="author-image animate-on-scroll">
-                <img src="images/author.jpg" alt="Rhoda De-Diadem">
-            </div>
-            <div class="author-bio animate-on-scroll">
-                <h2 class="section-title">About The Author</h2>
-                <p>Rhoda De-Diadem is an internationally acclaimed author with 12 published works translated into 15 languages. Her novels have received numerous awards for their rich historical detail and compelling narratives.</p>
-                
-                <div class="awards">
-                    <h3>Awards & Recognition</h3>
-                    <ul>
-                        <li><i class="fas fa-trophy"></i> 2023 National Book Award Finalist</li>
-                        <li><i class="fas fa-trophy"></i> Golden Quill Award Winner</li>
-                        <li><i class="fas fa-trophy"></i> New York Times Bestselling Author</li>
-                    </ul>
-                </div>
-                
-                <a href="media-kit.zip" class="btn btn-gold">
-                    <i class="fas fa-download"></i> Download Media Kit
-                </a>
-            </div>
-        </div>
-    </section>
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Send me a message for speaking engagements, book inquiries, or collaborations.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea placeholder="Your Message" rows="4"></textarea><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2 class="section-title">Latest Articles</h2>
-            
-            <div class="blog-grid">
-                <article class="blog-post animate-on-scroll">
-                    <div class="post-image">
-                        <img src="images/blog1.jpg" alt="Writing Process">
-                    </div>
-                    <div class="post-content">
-                        <h3>My Research Process</h3>
-                        <p class="post-date">June 15, 2025</p>
-                        <p>How I uncover the hidden stories that bring my historical novels to life...</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                
-                <!-- Additional posts -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-box animate-on-scroll">
-                <h2>Join My Reader Circle</h2>
-                <p>Get exclusive updates, early access to new releases, and behind-the-scenes content.</p>
-                
-                <form id="newsletter-form">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <button type="submit" class="btn btn-gold">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            
-            <div class="contact-grid">
-                <div class="contact-info animate-on-scroll">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> contact@rhodadediadem.com</p>
-                    <p><i class="fas fa-phone"></i> (For media inquiries only)</p>
-                    
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-goodreads"></i></a>
-                    </div>
-                </div>
-                
-                <div class="contact-form animate-on-scroll">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_KEY"></div>
-                        <button type="submit" class="btn btn-gold">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Rhoda <span>De-Diadem</span></h3>
-                    <p>Weaving stories through time</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#books">Books</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-newsletter">
-                    <h4>Stay Updated</h4>
-                    <form>
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Rhoda De-Diadem. All rights reserved.</p>
-                <p>Website designed by [Your Name]</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="js/script.js"></script>
+  <footer>
+    <p>&copy; 2025 Rhoda De-Diadem. All rights reserved.</p>
+  </footer>
 </body>
 </html>
