@@ -6,94 +6,22 @@
     <title>Rhoda De-Diadem | Award-Winning Author</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <style>
-        /* === Luxury Theme CSS === */
-        :root {
-            --gold: #D4AF37;
-            --dark-bg: #1A1A1A;
-            --light-bg: #F5F5F5;
-            --text-dark: #333;
-            --text-light: #EEE;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: url('https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-            background-size: cover;
-            color: var(--text-light);
-            position: relative;
-        }
-        
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: -1;
-        }
-        
-        /* Header with Gold Accents */
-        header {
-            background: rgba(26, 26, 26, 0.9);
-            border-bottom: 2px solid var(--gold);
-        }
-        
-        .logo h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            color: var(--gold);
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-        }
-        
-        /* Animated Book Cards */
-        .book-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.5s ease;
-        }
-        
-        .book-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--gold);
-        }
-        
-        /* Gold Buttons */
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold), #F4D03F);
-            color: var(--dark-bg);
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-        
-        /* Floating Animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-    <!-- Animated Preloader -->
+    <!-- Preloader -->
     <div class="preloader">
         <div class="gold-spinner"></div>
     </div>
 
-    <!-- Header with Gold Elements -->
-    <header class="sticky-top">
+    <!-- Header -->
+    <header>
         <div class="container">
             <div class="logo">
                 <h1>Rhoda <span>De-Diadem</span></h1>
+                <p>Award-Winning Author</p>
             </div>
             <nav>
                 <ul>
@@ -103,34 +31,38 @@
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section with Parallax -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-text animate__animated animate__fadeInLeft">
-                <h2>Award-Winning Author</h2>
-                <h1 class="animate__animated animate__fadeIn animate__delay-1s">Rhoda De-Diadem</h1>
-                <p class="animate__animated animate__fadeIn animate__delay-2s">Crafting stories that linger in the heart</p>
-                <a href="#books" class="btn btn-gold animate__animated animate__fadeInUp animate__delay-3s">Explore Books</a>
+            <div class="hero-content animate-on-scroll">
+                <h2>Immerse Yourself In</h2>
+                <h1>Captivating Literary Worlds</h1>
+                <p>Discover award-winning fiction that transports you to extraordinary realms</p>
+                <a href="#books" class="btn btn-gold">Explore Books</a>
             </div>
-            <div class="hero-image floating">
-                <img src="https://via.placeholder.com/400x600/1A1A1A/D4AF37?text=Latest+Book" alt="Latest Book Cover">
+            <div class="hero-image animate-on-scroll">
+                <img src="images/featured-book.png" alt="Featured Book" class="floating">
             </div>
         </div>
     </section>
 
-    <!-- Books Section with Retailer Options -->
-    <section id="books" class="books-section">
+    <!-- Books Section -->
+    <section id="books" class="books">
         <div class="container">
             <h2 class="section-title">Published Works</h2>
             
             <!-- Book 1 -->
-            <div class="book-card animate__animated animate__fadeInUp">
+            <div class="book-card animate-on-scroll">
                 <div class="book-cover">
-                    <img src="https://via.placeholder.com/250x400/1A1A1A/D4AF37?text=Book+1" alt="Book Cover">
+                    <img src="images/book1.jpg" alt="The Crown's Secret">
+                    <div class="book-badge">Bestseller</div>
                 </div>
                 <div class="book-details">
                     <h3>The Crown's Secret</h3>
@@ -142,94 +74,89 @@
                         <i class="fas fa-star-half-alt"></i>
                         <span>4.7/5 (1,243 reviews)</span>
                     </div>
-                    <p>When ancient royal secrets resurface, historian Elara must decide between revealing the truth or protecting the monarchy.</p>
+                    <p class="genre">Historical Fiction | Mystery</p>
+                    <p class="description">When ancient royal secrets resurface, historian Elara must decide between revealing the truth or protecting the monarchy.</p>
                     
-                    <div class="retailer-dropdown">
-                        <button class="btn btn-gold">Purchase <i class="fas fa-chevron-down"></i></button>
-                        <div class="dropdown-content">
-                            <a href="[AMAZON_LINK]" target="_blank"><i class="fab fa-amazon"></i> Amazon</a>
-                            <a href="[BARNESNOBLE_LINK]" target="_blank"><i class="fas fa-book"></i> Barnes & Noble</a>
-                            <a href="[APPLE_LINK]" target="_blank"><i class="fab fa-apple"></i> Apple Books</a>
-                        </div>
+                    <div class="retailer-buttons">
+                        <a href="[AMAZON_LINK]" class="btn btn-amazon" target="_blank">
+                            <i class="fab fa-amazon"></i> Amazon
+                        </a>
+                        <a href="[BARNES_LINK]" class="btn btn-barnes" target="_blank">
+                            <i class="fas fa-book"></i> Barnes & Noble
+                        </a>
+                        <a href="[APPLE_LINK]" class="btn btn-apple" target="_blank">
+                            <i class="fab fa-apple"></i> Apple Books
+                        </a>
                     </div>
                 </div>
             </div>
             
-            <!-- Repeat for other books from Amazon profile -->
+            <!-- Repeat for other books -->
         </div>
     </section>
 
-    <!-- Author Bio Section -->
-    <section id="about" class="author-section">
+    <!-- Author Bio -->
+    <section id="about" class="about">
         <div class="container">
-            <div class="author-image">
-                <img src="https://via.placeholder.com/400x500/1A1A1A/D4AF37?text=Rhoda+De-Diadem" alt="Rhoda De-Diadem">
+            <div class="author-image animate-on-scroll">
+                <img src="images/author.jpg" alt="Rhoda De-Diadem">
             </div>
-            <div class="author-bio">
-                <h2>About The Author</h2>
-                <p>Rhoda De-Diadem is an award-winning author specializing in historical fiction with elements of mystery and romance. With over 15 published works, her books have been translated into 12 languages.</p>
+            <div class="author-bio animate-on-scroll">
+                <h2 class="section-title">About The Author</h2>
+                <p>Rhoda De-Diadem is an internationally acclaimed author with 12 published works translated into 15 languages. Her novels have received numerous awards for their rich historical detail and compelling narratives.</p>
                 
                 <div class="awards">
                     <h3>Awards & Recognition</h3>
                     <ul>
                         <li><i class="fas fa-trophy"></i> 2023 National Book Award Finalist</li>
                         <li><i class="fas fa-trophy"></i> Golden Quill Award Winner</li>
+                        <li><i class="fas fa-trophy"></i> New York Times Bestselling Author</li>
                     </ul>
                 </div>
                 
-                <a href="media-kit.zip" class="btn btn-gold">Download Media Kit</a>
+                <a href="media-kit.zip" class="btn btn-gold">
+                    <i class="fas fa-download"></i> Download Media Kit
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="blog-section">
+    <section id="blog" class="blog">
         <div class="container">
-            <h2 class="section-title">From The Blog</h2>
+            <h2 class="section-title">Latest Articles</h2>
             
             <div class="blog-grid">
-                <!-- Blog Post 1 -->
-                <article class="blog-post animate__animated animate__fadeIn">
+                <article class="blog-post animate-on-scroll">
                     <div class="post-image">
-                        <img src="https://via.placeholder.com/400x300/1A1A1A/D4AF37?text=Writing+Tips" alt="Blog Image">
+                        <img src="images/blog1.jpg" alt="Writing Process">
                     </div>
                     <div class="post-content">
-                        <h3>My Research Process for Historical Fiction</h3>
-                        <p class="post-meta">June 15, 2025 | Writing Process</p>
-                        <p>How I uncover the hidden stories that bring my novels to life...</p>
-                        <a href="#" class="btn btn-gold">Read More</a>
+                        <h3>My Research Process</h3>
+                        <p class="post-date">June 15, 2025</p>
+                        <p>How I uncover the hidden stories that bring my historical novels to life...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
                 
-                <!-- Blog Post 2 -->
-                <article class="blog-post animate__animated animate__fadeIn animate__delay-1s">
-                    <div class="post-image">
-                        <img src="https://via.placeholder.com/400x300/1A1A1A/D4AF37?text=Book+Announcement" alt="Blog Image">
-                    </div>
-                    <div class="post-content">
-                        <h3>Announcing My New Trilogy</h3>
-                        <p class="post-meta">May 28, 2025 | News</p>
-                        <p>The story behind my upcoming series set in 18th century Europe...</p>
-                        <a href="#" class="btn btn-gold">Read More</a>
-                    </div>
-                </article>
+                <!-- Additional posts -->
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
+    <!-- Newsletter -->
+    <section class="newsletter">
         <div class="container">
-            <div class="newsletter-box">
-                <h2>Join My Reader's Circle</h2>
+            <div class="newsletter-box animate-on-scroll">
+                <h2>Join My Reader Circle</h2>
                 <p>Get exclusive updates, early access to new releases, and behind-the-scenes content.</p>
                 
                 <form id="newsletter-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <button type="submit" class="btn btn-gold">Subscribe</button>
                 </form>
@@ -238,12 +165,12 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             
             <div class="contact-grid">
-                <div class="contact-info">
+                <div class="contact-info animate-on-scroll">
                     <h3>Contact Information</h3>
                     <p><i class="fas fa-envelope"></i> contact@rhodadediadem.com</p>
                     <p><i class="fas fa-phone"></i> (For media inquiries only)</p>
@@ -256,17 +183,18 @@
                     </div>
                 </div>
                 
-                <div class="contact-form">
+                <div class="contact-form animate-on-scroll">
                     <form id="contact-form">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" required></textarea>
+                            <textarea name="message" placeholder="Your Message" required></textarea>
                         </div>
+                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_KEY"></div>
                         <button type="submit" class="btn btn-gold">Send Message</button>
                     </form>
                 </div>
@@ -289,62 +217,29 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#books">Books</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#blog">Blog</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-legal">
-                    <p>&copy; 2025 Rhoda De-Diadem. All rights reserved.</p>
-                    <p>Website designed by [Your Name]</p>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <form>
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rhoda De-Diadem. All rights reserved.</p>
+                <p>Website designed by [Your Name]</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    
-    <script>
-        // Preloader
-        $(window).on('load', function() {
-            $('.preloader').fadeOut('slow');
-        });
-        
-        // Animate on Scroll
-        gsap.registerPlugin(ScrollTrigger);
-        
-        gsap.utils.toArray('.animate-on-scroll').forEach(element => {
-            gsap.from(element, {
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 80%",
-                    toggleActions: "play none none none"
-                },
-                opacity: 0,
-                y: 50,
-                duration: 1
-            });
-        });
-        
-        // Smooth Scrolling
-        $('a[href*="#"]').on('click', function(e) {
-            e.preventDefault();
-            $('html, body').animate(
-                { scrollTop: $($(this).attr('href')).offset().top - 80 },
-                800
-            );
-        });
-        
-        // Form Submission
-        $('#newsletter-form, #contact-form').submit(function(e) {
-            e.preventDefault();
-            // Add form submission logic here
-            alert('Thank you for your message!');
-            $(this).trigger('reset');
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
