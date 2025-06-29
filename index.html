@@ -3,176 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rhoda De-Diadem - Author</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66');
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      color: #333;
-    }
-    header {
-      text-align: center;
-      padding: 2em;
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794');
-      background-size: cover;
-      background-position: center;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5em;
-      margin-bottom: 0.3em;
-      animation: fadeInDown 1s;
-    }
-    nav {
-      background-color: #6a1b9a;
-      display: flex;
-      justify-content: center;
-      gap: 1em;
-      padding: 1em;
-      animation: fadeIn 2s;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5em;
-      padding: 2em;
-    }
-    .book-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s;
-      animation: zoomIn 1s;
-    }
-    .book-card:hover {
-      transform: scale(1.03);
-    }
-    .book-card img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-    }
-    .book-card .content {
-      padding: 1em;
-    }
-    .book-card .content h3 {
-      margin: 0.5em 0;
-      color: #6a1b9a;
-    }
-    .cta {
-      text-align: center;
-      padding: 2em;
-      animation: fadeInUp 1s;
-    }
-    .cta input, .cta button {
-      padding: 0.8em;
-      margin: 0.5em;
-      border-radius: 5px;
-      border: none;
-    }
-    .cta button {
-      background-color: #6a1b9a;
-      color: white;
-      cursor: pointer;
-    }
-    footer {
-      background-color: #4a148c;
-      color: white;
-      text-align: center;
-      padding: 1.5em;
-    }
-    .bio, .blog, .contact {
-      padding: 2em;
-      background: rgba(255,255,255,0.9);
-      margin: 2em auto;
-      border-radius: 10px;
-      max-width: 800px;
-    }
-    .bio img {
-      max-width: 150px;
-      border-radius: 50%;
-    }
-  </style>
+  <title>Rhoda De-Diadem | Author Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
-  <header class="animate__animated animate__fadeIn">
-    <h1>Rhoda De-Diadem</h1>
-    <p>Christian Author | Inspirational Writer | Faith Builder</p>
+<body class="bg-cover bg-fixed bg-center text-gray-800" style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66');">
+  <header class="bg-purple-900 bg-opacity-80 text-white py-10 text-center">
+    <h1 class="text-4xl font-bold">Rhoda De-Diadem</h1>
+    <p class="text-lg">Christian Author | Faith-Inspired Storyteller</p>
   </header>
 
-  <nav>
-    <a href="#books">Books</a>
-    <a href="#about">About</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
+  <nav class="flex justify-center space-x-6 bg-purple-700 text-white py-4 text-sm">
+    <a href="#books" class="hover:underline">Books</a>
+    <a href="#about" class="hover:underline">About</a>
+    <a href="#newsletter" class="hover:underline">Newsletter</a>
+    <a href="#contact" class="hover:underline">Contact</a>
   </nav>
 
-  <section id="books" class="book-grid">
-    <!-- Example books manually added from Amazon -->
-    <div class="book-card animate__animated animate__zoomIn">
-      <img src="https://m.media-amazon.com/images/I/81eB+7+CkUL._AC_UY218_.jpg" alt="Book Cover">
-      <div class="content">
-        <h3>Strength for the Journey</h3>
-        <p>Inspirational devotions that anchor your soul in Christ during tough times. A must-have for every Christian bookshelf.</p>
-        <a href="https://www.amazon.com/dp/B08K2F9R5T" target="_blank">Buy on Amazon</a>
-      </div>
+  <section id="books" class="py-12 px-6">
+    <h2 class="text-3xl font-semibold text-center mb-6">Books</h2>
+    <div id="book-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+  </section>
+
+  <section id="about" class="bg-white bg-opacity-90 p-8 mx-auto max-w-4xl rounded-lg shadow-lg my-12" data-aos="fade-up">
+    <h2 class="text-2xl font-bold mb-4">About Rhoda</h2>
+    <p class="mb-4">Rhoda De-Diadem is a passionate Christian writer whose works inspire, uplift, and empower readers to grow in faith and purpose. Her stories blend scripture-based truth with real-world relevance.</p>
+    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36" alt="Rhoda" class="rounded-full w-32 h-32 object-cover">
+  </section>
+
+  <section id="newsletter" class="bg-purple-100 py-12 px-6" data-aos="fade-up">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-2xl font-semibold text-center mb-4">Join My Newsletter</h2>
+      <form class="space-y-4">
+        <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded">
+        <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded">
+        <button type="submit" class="w-full bg-purple-700 text-white py-3 rounded hover:bg-purple-800">Subscribe</button>
+      </form>
     </div>
-    <div class="book-card animate__animated animate__zoomIn">
-      <img src="https://m.media-amazon.com/images/I/71KilybDOoL._AC_UY218_.jpg" alt="Book Cover">
-      <div class="content">
-        <h3>The Power of Prayer</h3>
-        <p>A practical and powerful guide to understanding how prayer can transform lives. Rhoda shares key faith principles.</p>
-        <a href="https://www.amazon.com/dp/B089S3YTJ5" target="_blank">Buy on Amazon</a>
-      </div>
-    </div>
-    <!-- Add more books as needed -->
   </section>
 
-  <section class="cta">
-    <h2>Join My Newsletter</h2>
-    <input type="text" placeholder="Your Name" />
-    <input type="email" placeholder="Your Email" />
-    <button>Subscribe</button>
-  </section>
-
-  <section id="about" class="bio">
-    <h2>About Rhoda</h2>
-    <p>Rhoda De-Diadem is a passionate Christian writer whose works inspire, uplift, and empower readers to grow in faith and purpose. Her stories blend scripture-based truth with real-world relevance.</p>
-    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36" alt="Author photo">
-  </section>
-
-  <section id="blog" class="blog">
-    <h2>Latest Insights</h2>
-    <p>Coming soon: Reflections, devotionals, and writing journey posts from Rhoda.</p>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Send me a message for speaking engagements, book inquiries, or collaborations.</p>
-    <form>
-      <input type="text" placeholder="Your Name" required><br>
-      <input type="email" placeholder="Your Email" required><br>
-      <textarea placeholder="Your Message" rows="4"></textarea><br>
-      <button type="submit">Send Message</button>
+  <section id="contact" class="p-8 max-w-4xl mx-auto bg-white bg-opacity-90 my-12 rounded-lg shadow-lg" data-aos="fade-up">
+    <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+    <form class="space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded">
+      <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded">
+      <textarea placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded h-32"></textarea>
+      <button type="submit" class="w-full bg-purple-700 text-white py-3 rounded hover:bg-purple-800">Send Message</button>
     </form>
   </section>
 
-  <footer>
+  <footer class="text-center bg-purple-900 text-white py-6">
     <p>&copy; 2025 Rhoda De-Diadem. All rights reserved.</p>
   </footer>
+
+  <script>
+    AOS.init();
+
+    // Placeholder: Replace with dynamic loading later
+    const books = [
+      {
+        title: "Strength for the Journey",
+        description: "Inspirational devotions that anchor your soul in Christ during tough times.",
+        image: "https://m.media-amazon.com/images/I/81eB+7+CkUL._AC_UY218_.jpg",
+        link: "https://www.amazon.com/dp/B08K2F9R5T"
+      },
+      {
+        title: "The Power of Prayer",
+        description: "A practical and powerful guide to understanding how prayer can transform lives.",
+        image: "https://m.media-amazon.com/images/I/71KilybDOoL._AC_UY218_.jpg",
+        link: "https://www.amazon.com/dp/B089S3YTJ5"
+      }
+    ];
+
+    const bookList = document.getElementById("book-list");
+    books.forEach(book => {
+      const card = document.createElement("div");
+      card.className = "bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300";
+      card.innerHTML = `
+        <img src="${book.image}" alt="${book.title}" class="w-full h-60 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-purple-700">${book.title}</h3>
+          <p class="text-sm mt-2 mb-4">${book.description}</p>
+          <a href="${book.link}" target="_blank" class="inline-block bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Buy on Amazon</a>
+        </div>
+      `;
+      bookList.appendChild(card);
+    });
+  </script>
 </body>
 </html>
