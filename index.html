@@ -5,17 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rhoda De-Diadem - Author</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+      background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       color: #333;
     }
     header {
       text-align: center;
       padding: 2em;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.6);
       color: white;
       background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794');
       background-size: cover;
@@ -25,6 +29,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.5em;
       margin-bottom: 0.3em;
+      animation: fadeInDown 1s;
     }
     nav {
       background-color: #6a1b9a;
@@ -32,6 +37,7 @@
       justify-content: center;
       gap: 1em;
       padding: 1em;
+      animation: fadeIn 2s;
     }
     nav a {
       color: white;
@@ -50,6 +56,7 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
       overflow: hidden;
       transition: transform 0.3s;
+      animation: zoomIn 1s;
     }
     .book-card:hover {
       transform: scale(1.03);
@@ -69,6 +76,7 @@
     .cta {
       text-align: center;
       padding: 2em;
+      animation: fadeInUp 1s;
     }
     .cta input, .cta button {
       padding: 0.8em;
@@ -89,7 +97,7 @@
     }
     .bio, .blog, .contact {
       padding: 2em;
-      background: #f9f9f9;
+      background: rgba(255,255,255,0.9);
       margin: 2em auto;
       border-radius: 10px;
       max-width: 800px;
@@ -101,7 +109,7 @@
   </style>
 </head>
 <body>
-  <header>
+  <header class="animate__animated animate__fadeIn">
     <h1>Rhoda De-Diadem</h1>
     <p>Christian Author | Inspirational Writer | Faith Builder</p>
   </header>
@@ -114,16 +122,24 @@
   </nav>
 
   <section id="books" class="book-grid">
-    <!-- Add dynamic book cards here -->
-    <div class="book-card">
-      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Book Cover">
+    <!-- Example books manually added from Amazon -->
+    <div class="book-card animate__animated animate__zoomIn">
+      <img src="https://m.media-amazon.com/images/I/81eB+7+CkUL._AC_UY218_.jpg" alt="Book Cover">
       <div class="content">
-        <h3>Book Title</h3>
-        <p>A short description of the book highlighting the core message and reader benefit.</p>
-        <a href="https://amazon.com" target="_blank">Buy on Amazon</a>
+        <h3>Strength for the Journey</h3>
+        <p>Inspirational devotions that anchor your soul in Christ during tough times. A must-have for every Christian bookshelf.</p>
+        <a href="https://www.amazon.com/dp/B08K2F9R5T" target="_blank">Buy on Amazon</a>
       </div>
     </div>
-    <!-- Repeat for other books -->
+    <div class="book-card animate__animated animate__zoomIn">
+      <img src="https://m.media-amazon.com/images/I/71KilybDOoL._AC_UY218_.jpg" alt="Book Cover">
+      <div class="content">
+        <h3>The Power of Prayer</h3>
+        <p>A practical and powerful guide to understanding how prayer can transform lives. Rhoda shares key faith principles.</p>
+        <a href="https://www.amazon.com/dp/B089S3YTJ5" target="_blank">Buy on Amazon</a>
+      </div>
+    </div>
+    <!-- Add more books as needed -->
   </section>
 
   <section class="cta">
@@ -136,6 +152,7 @@
   <section id="about" class="bio">
     <h2>About Rhoda</h2>
     <p>Rhoda De-Diadem is a passionate Christian writer whose works inspire, uplift, and empower readers to grow in faith and purpose. Her stories blend scripture-based truth with real-world relevance.</p>
+    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36" alt="Author photo">
   </section>
 
   <section id="blog" class="blog">
