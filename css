@@ -1,1 +1,95 @@
 
+/* === CLIENT-REQUESTED FEATURES === */
+
+/* 1. Enhanced Book Covers */
+.book-cover {
+    border: 3px solid #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.book-cover:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.3);
+}
+
+/* 2. Multi-Retailer Buttons */
+.btn-retailer {
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-retailer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.amazon { background: #FF9900; color: #000; }
+.barnes { background: #3A5F8E; color: #fff; }
+.apple { background: #000; color: #fff; }
+
+/* 3. Professional Author Bio */
+.author-bio {
+    background: linear-gradient(135deg, #f8f5f0 0%, #ffffff 100%);
+    border: 1px solid rgba(139, 69, 19, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.author-credentials li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 4. Blog Section */
+.blog-post {
+    background: #fff;
+    border-left: 4px solid #D4AF37;
+    transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* 5. Secure Contact Form */
+.contact-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.g-recaptcha {
+    margin: 20px 0;
+}
+
+/* Animations (Client: "visually interesting") */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.book-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Mobile Optimization (Client: ad traffic) */
+@media (max-width: 768px) {
+    .book {
+        flex-direction: column;
+    }
+    
+    .retailer-buttons {
+        flex-direction: column;
+    }
+}
